@@ -21,4 +21,12 @@ class Pet:
         return self.__animal_type
 
     def get_age(self):
-        return self.__age
+        years = self.__age // 12
+        months = self.__age % 12
+
+        if years == 0:
+            return f"{months} month(s)"
+        elif months == 0:
+            return f"{years} year(s)"
+        else:
+            return f"{years} year(s) and {months} month(s)"
