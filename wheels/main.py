@@ -4,22 +4,20 @@ from dashboard import Dashboard
 
 def main():
 
-    car = Car(2024, "Toyota")
-    dashboard = Dashboard(car)
+    my_car = Car(2024, "Toyota")
+    dashboard = Dashboard(my_car)
 
     dashboard.show_header()
 
-    dashboard.show_acceleration_header()
+    dashboard.start_engine()
 
     for count in range(1, 6):
-        car.accelerate()
-        dashboard.show_acceleration(count)
-
-    dashboard.show_braking_header()
+        my_car.accelerate()
+        dashboard.show_acceleration(my_car.get_speed(), count)
 
     for count in range(1, 6):
         car.brake()
-        dashboard.show_braking(count)
+        dashboard.show_braking(my_car.get_speed(), count)
 
     dashboard.show_footer()
 
