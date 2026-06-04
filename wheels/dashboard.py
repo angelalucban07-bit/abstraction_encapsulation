@@ -46,7 +46,6 @@ class Dashboard:
         print(self.YELLOW)
         print("\nENGINE STARTING...\n")
         print(self.RESET)
-        time.sleep(1)
 
     def show_acceleration(self, speed, stage):
         if stage == 1:
