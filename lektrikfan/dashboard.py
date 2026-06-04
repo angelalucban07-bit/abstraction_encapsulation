@@ -8,9 +8,30 @@ class Dashboard:
         print("      FAN STATUS")
         print("=" * 30)
 
-    def display_fan(self, fan):
+    def speed_name(self, speed):
 
-        print("Speed :", fan.get_speed())
-        print("Radius:", fan.get_radius())
-        print("Color :", fan.get_color())
-        print("On    :", fan.get_on())
+        if speed == 1:
+            return "SLOW"
+
+        elif speed == 2:
+            return "MEDIUM"
+
+        else:
+            return "FAST"
+
+    def line(self, text):
+        print(f"║ {text:<24} ║")
+
+    def display_fan(self, fan, number):
+
+        status = "ON" if fan.get_on() else "OFF"
+
+        print("╔══════════════════════════╗")
+        self.line(f"FAN #{number}")
+        print("╠══════════════════════════╣")
+        self.line(f"Speed : {self.speed_name(fan.get_speed())}")
+        self.line(f"Radius: {fan.get_radius()}")
+        self.line(f"Color : {fan.get_color().title()}")
+        self.line(f"Status: {status}")
+        print("╚══════════════════════════╝")
+        print()
