@@ -11,13 +11,13 @@ def main():
 
     dashboard.start_engine()
 
-    for count in range(1, 6):
+    for stage in range(1, 6):
         my_car.accelerate()
-        dashboard.show_acceleration(my_car.get_speed(), count)
+        dashboard.show_acceleration(my_car.get_speed(), stage)
 
-    for count in range(1, 6):
-        car.brake()
-        dashboard.show_braking(my_car.get_speed(), count)
+    for stage in range(1, 6):
+        my_car.brake()
+        dashboard.show_braking(my_car.get_speed(), stage)
 
     dashboard.show_footer()
 

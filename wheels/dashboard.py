@@ -1,3 +1,5 @@
+import time
+
 class Dashboard:
 
     WIDTH = 54
@@ -20,6 +22,11 @@ class Dashboard:
     def box_line(self, text=""):
         print(f"│{text:<{self.WIDTH}}│")
 
+    def header(self, title):
+            print("╔" + "═" * self.WIDTH + "╗")
+            print(f"║{title:^{self.WIDTH}}║")
+            print("╚" + "═" * self.WIDTH + "╝")
+
     def show_header(self):
         print(self.CYAN)
 
@@ -40,14 +47,7 @@ class Dashboard:
         print("\nENGINE STARTING...\n")
         print(self.RESET)
 
-        spinner = ["|", "/", "-", "\\"]
-
-        for i in range(12):
-            print(f"\rIgnition {spinner[i % 4]}", end="")
-
-        print("\n")
-
-    def show_acceleration(self, count):
+    def show_acceleration(self, speed, stage):
         if stage == 1:
             print(self.GREEN)
             self.header("🚀 ACCELERATION MODE")
@@ -70,7 +70,7 @@ class Dashboard:
 
         print(self.RESET)
 
-    def show_braking(self, count):
+    def show_braking(self, speed, stage):
         if stage == 1:
             print(self.RED)
             self.header("🛑 BRAKE MODE")
