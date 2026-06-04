@@ -47,6 +47,12 @@ class Dashboard:
         print("\nENGINE STARTING...\n")
         print(self.RESET)
 
+        spinner = ["|", "/", "-", "\\"]
+        for i in range(12):
+            print(f"\rIgnition {spinner[i % 4]}", end="")
+            time.sleep(0.15)
+        print("\n")
+
     def show_acceleration(self, speed, stage):
         if stage == 1:
             print(self.GREEN)
