@@ -46,6 +46,7 @@ class Dashboard:
         print(self.YELLOW)
         print("\nENGINE STARTING...\n")
         print(self.RESET)
+        time.sleep(1)
 
     def show_acceleration(self, speed, stage):
         if stage == 1:
@@ -69,6 +70,7 @@ class Dashboard:
         self.box_bottom()
 
         print(self.RESET)
+        time.sleep(1)
 
     def show_braking(self, speed, stage):
         if stage == 1:
@@ -92,6 +94,7 @@ class Dashboard:
         self.box_bottom()
 
         print(self.RESET)
+        time.sleep(1)
 
     def show_footer(self):
         print(self.CYAN)
