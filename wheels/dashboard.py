@@ -93,14 +93,6 @@ class Dashboard:
 
         print(self.RESET)
 
-    # def show_acceleration_header(self):
-    #     print("\n[ ACCELERATING ]")
-    #     print("-" * 35)
-    #
-    # def show_braking_header(self):
-    #     print("\n[ BRAKING ]")
-    #     print("-" * 35)
-
     def show_footer(self):
         print(self.CYAN)
 
