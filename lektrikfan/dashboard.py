@@ -73,11 +73,4 @@ class Dashboard:
         self.line(f"Status: {status}")
         print(self.CYAN)
         self.bottom()
-
         print()
-
-    def show_footer(self):
-
-        print(self.GREEN)
-        print("✓CHECK COMPLETE")
-        print(self.RESET)
