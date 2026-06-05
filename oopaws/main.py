@@ -23,7 +23,7 @@ def display_pet_info(pet):
 def main():
     my_pet = Pet()
 
-    print("🐾 Welcome to OOPaws 🐾\n")
+    print("\n🐾 Welcome to OOPaws 🐾")
     name = input("Enter your pet's name: ")
     animal_type = input("Enter the type of animal: ")
     age = int(input("Enter the pet's age in months: "))
