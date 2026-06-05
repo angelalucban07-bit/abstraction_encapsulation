@@ -8,16 +8,17 @@ class Dashboard:
     RED = "\033[91m"
     YELLOW = "\033[93m"
     MAGENTA = "\033[95m"
+    BLUE = "\033[94m"
     WHITE = "\033[97m"
     RESET = "\033[0m"
 
     def __init__(self):
         pass
 
-    def show_header(self):
-        print("=" * 30)
-        print("      FAN STATUS")
-        print("=" * 30)
+    # def show_header(self):
+    #     print("=" * 30)
+    #     print("      FAN STATUS")
+    #     print("=" * 30)
 
     def speed_name(self, speed):
 
@@ -34,7 +35,7 @@ class Dashboard:
         print(f"║ {text:<{self.WIDTH-2}} ║")
 
     def top(self):
-        print(self.CYAN + "╔" + "═" * self.WIDTH + "╗")
+        print("╔" + "═" * self.WIDTH + "╗")
 
     def middle(self):
         print("╠" + "═" * self.WIDTH + "╣")
@@ -48,10 +49,10 @@ class Dashboard:
     def show_header(self):
 
         self.top()
-        print(self.MAGENTA)
+        print(self.MAGENTA, end="")
         self.line("🌪️ ELEKTRIKFAN 🌪️")
-        print(self.CYAN)
         self.bottom()
+        print(self.RESET)
         print()
 
         time.sleep(1)
@@ -60,21 +61,29 @@ class Dashboard:
 
         status = "ON" if fan.get_on() else "OFF"
 
+        if fan.get_color().lower() == "yellow":
+            box_color = self.YELLOW
+        elif fan.get_color().lower() == "blue":
+            box_color = self.BLUE
+        else:
+            box_color = self.WHITE
+
+        print(box_color, end="")
+
         self.top()
-        print(self.YELLOW)
         self.line(f"FAN #{number}")
-        print(self.CYAN)
+        self.middle()
         self.line(f"Speed : {self.speed_name(fan.get_speed())}")
         self.line(f"Radius: {fan.get_radius()}")
         self.line(f"Color : {fan.get_color().upper()}")
-
-        if fan.get_on():
-            print(self.GREEN)
-        else:
-            print(self.RED)
-
         self.line(f"Status: {status}")
-        print(self.CYAN)
         self.bottom()
+        # if fan.get_on():
+        #     print(self.GREEN, end="")
+        # else:
+        #     print(self.RED, end="")
+
+        # self.line(f"Status: {status}")
+        print(self.RESET)
         print()
         time.sleep(0.7)
