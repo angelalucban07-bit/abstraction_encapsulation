@@ -1,3 +1,5 @@
+import time
+
 class Dashboard:
 
     WIDTH = 34
@@ -50,8 +52,9 @@ class Dashboard:
         self.line("🌪️ ELEKTRIKFAN 🌪️")
         print(self.CYAN)
         self.bottom()
-
         print()
+
+        time.sleep(1)
 
     def display_fan(self, fan, number):
 
@@ -74,3 +77,4 @@ class Dashboard:
         print(self.CYAN)
         self.bottom()
         print()
+        time.sleep(0.7)
