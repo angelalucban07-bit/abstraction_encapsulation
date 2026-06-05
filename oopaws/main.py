@@ -18,7 +18,7 @@ def display_pet_info(pet):
     print(WHITE)
     print(f"🐾 Name        : {pet.get_name()}")
     print(f"🐾 Animal Type : {pet.get_animal_type()}")
-    print(f"🐾 Age         : {pet.get_age()} months")
+    print(f"🐾 Age         : {pet.get_age()}")
 
 def main():
     my_pet = Pet()
