@@ -15,12 +15,15 @@ def display_pet_info(pet):
     print("🐾════════════════════════════🐾")
     print(RESET)
 
-    print("Name:", pet.get_name())
-    print("Animal Type:", pet.get_animal_type())
-    print("Age:", pet.get_age())
+    print(WHITE)
+    print(f"🐾 Name        : {pet.get_name()}")
+    print(f"🐾 Animal Type : {pet.get_animal_type()}")
+    print(f"🐾 Age         : {pet.get_age()} months")
 
 def main():
     my_pet = Pet()
+
+    print("🐾 Welcome to OOPaws 🐾\n")
     name = input("Enter your pet's name: ")
     animal_type = input("Enter the type of animal: ")
     age = int(input("Enter the pet's age in months: "))
