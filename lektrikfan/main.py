@@ -13,7 +13,5 @@ def main():
     dashboard.display_fan(fan1, 1)
     dashboard.display_fan(fan2, 2)
 
-
-
 if __name__ == "__main__":
     main()
