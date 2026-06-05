@@ -8,8 +8,12 @@ def main():
 
     dashboard = Dashboard()
 
+    dashboard.show_header()
+
     dashboard.display_fan(fan1, 1)
     dashboard.display_fan(fan2, 2)
+
+    dashboard.show_footer()
 
 if __name__ == "__main__":
     main()
