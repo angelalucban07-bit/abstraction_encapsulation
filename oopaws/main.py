@@ -1,6 +1,12 @@
 from pet import Pet
 
 def display_pet_info(pet):
+
+    CYAN = "\033[96m"
+    YELLOW = "\033[93m"
+    WHITE = "\033[97m"
+    RESET = "\033[0m"
+    
     print("\nPet Information")
     print("Name:", pet.get_name())
     print("Animal Type:", pet.get_animal_type())
