@@ -3,9 +3,6 @@ import time
 class Dashboard:
 
     WIDTH = 34
-    CYAN = "\033[96m"
-    GREEN = "\033[92m"
-    RED = "\033[91m"
     YELLOW = "\033[93m"
     MAGENTA = "\033[95m"
     BLUE = "\033[94m"
@@ -14,11 +11,6 @@ class Dashboard:
 
     def __init__(self):
         pass
-
-    # def show_header(self):
-    #     print("=" * 30)
-    #     print("      FAN STATUS")
-    #     print("=" * 30)
 
     def speed_name(self, speed):
 
@@ -78,12 +70,7 @@ class Dashboard:
         self.line(f"Color : {fan.get_color().upper()}")
         self.line(f"Status: {status}")
         self.bottom()
-        # if fan.get_on():
-        #     print(self.GREEN, end="")
-        # else:
-        #     print(self.RED, end="")
 
-        # self.line(f"Status: {status}")
         print(self.RESET)
         print()
         time.sleep(0.7)
